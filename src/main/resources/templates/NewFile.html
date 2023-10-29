@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form th:action="@{/}" th:object="${art}" method="post">
+Name:<input type="text" th:field="*{name}" ><br><br>
+Price:<input type="number" th:field="*{price}" step ="0.01"><br><br>
+Quantity:<input type="number" th:field="*{quantity}" ><br><br>
+
+<input type="submit"><br><br>
+<a href="/view">View Art</a>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1">
+<tr>
+<th>ID</th>
+<th>Name</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Delete</th>
+<th>Purchase</th>
+</tr>
+
+<tr th:each="s : ${art}">
+<td th:text="${s.id}"></td>
+<td th:text="${s.name}"></td>
+<td th:text="${s.price}"></td>
+<td th:text="${s.quantity == 0 ? 'Sold Out' : s.quantity}"></td>
+
+
+<td><a th:href="@{/delete/{id}(id=${s.id})}">Delete</a></td>
+<td th:if="${s.quantity > 0}"><a th:href="@{/purchase/{id}(id=${s.id})}">Purchase</a></td>
+
+
+
+</tr>
+
+
+</table>
+
+
+</form>
+	<h1> I you want to add more Art Please click the below link </h1>
+	<a href="/">Add Art</a>
+
+</body>
+</html>
